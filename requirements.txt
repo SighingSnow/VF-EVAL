@@ -1,0 +1,6 @@
+vllm==0.8.3
+openai
+accelerate
+aiolimiter
+qwen-vl-utils
+google-generativeai

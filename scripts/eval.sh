@@ -1,0 +1,71 @@
+#!/bin/bash
+
+files=(
+"yesno/yesno_final.json"
+"openend/openend_final.json"
+"multi/multi_final.json"
+)
+)
+
+cot=(
+"yn_cot"
+"op_cot"
+"cot"
+)
+
+file="final"
+main_file="eval.py"
+prompt="${cot[0]}"
+echo "Processing file: $file with prompt: $prompt"
+python "$main_file" --model "OpenGVLab/InternVL3-8B"  --frames "4" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-7B-Instruct" --frames "8" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "microsoft/Phi-3.5-vision-instruct" --frames "8" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "DAMO-NLP-SG/VideoLLaMA3-7B" --frames "-1" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-72B-Instruct-AWQ" --frames "8" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/LLaVA-NeXT-Video-7B-hf" --frames "-1" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/llama3-llava-next-8b-hf" --frames "2" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "unsloth/Llama-3.2-11B-Vision-Instruct" --frames "16" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.5-flash-preview-05-20" --frames "-1" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.0-flash" --frames "-1" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "OpenGVLab/InternVL3-38B"  --frames "4" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "mistralai/Mistral-Small-3.1-24B-Instruct-2503" --frames "8" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1" --frames "16" --qtype "yesno" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1-mini" --frames "16" --qtype "yesno" --prompt "$prompt" --method "$file"
+
+
+main_file="eval.py"
+prompt="${cot[1]}"
+echo "Processing file: $file with prompt: $prompt"
+python "$main_file" --model "OpenGVLab/InternVL3-8B"  --frames "4" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-7B-Instruct" --frames "8" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-72B-Instruct-AWQ" --frames "8" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "microsoft/Phi-3.5-vision-instruct" --frames "8" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "DAMO-NLP-SG/VideoLLaMA3-7B" --frames "-1" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/LLaVA-NeXT-Video-7B-hf" --frames "-1" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/llama3-llava-next-8b-hf" --frames "2" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "unsloth/Llama-3.2-11B-Vision-Instruct" --frames "16" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.5-flash-preview-05-20" --frames "-1" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.0-flash" --frames "-1" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "OpenGVLab/InternVL3-38B"  --frames "4" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "mistralai/Mistral-Small-3.1-24B-Instruct-2503" --frames "8" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1" --frames "16" --qtype "openend" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1-mini" --frames "16" --qtype "openend" --prompt "$prompt" --method "$file"
+
+
+main_file="eval.py"
+prompt="${cot[2]}"
+echo "Processing file: $file with prompt: $prompt"
+python "$main_file" --model "OpenGVLab/InternVL3-8B"  --frames "4" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-7B-Instruct" --frames "8" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "Qwen/Qwen2.5-VL-72B-Instruct-AWQ" --frames "8" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "microsoft/Phi-3.5-vision-instruct" --frames "8" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "DAMO-NLP-SG/VideoLLaMA3-7B" --frames "-1" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/LLaVA-NeXT-Video-7B-hf" --frames "-1" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "llava-hf/llama3-llava-next-8b-hf" --frames "2" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "unsloth/Llama-3.2-11B-Vision-Instruct" --frames "16" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.5-flash-preview-05-20" --frames "-1" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gemini-2.0-flash" --frames "-1" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "OpenGVLab/InternVL3-38B"  --frames "4" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "mistralai/Mistral-Small-3.1-24B-Instruct-2503" --frames "8" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1" --frames "16" --qtype "multi" --prompt "$prompt" --method "$file"
+python "$main_file" --model "gpt-4.1-mini" --frames "16" --qtype "multi" --prompt "$prompt" --method "$file"
